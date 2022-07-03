@@ -22,7 +22,7 @@ struct ContentView: View {
 
         return amountPerPerson
     }
-
+    @FocusState private var amountIsFocused: Bool
 
     var body: some View {
         NavigationView {
@@ -34,6 +34,7 @@ struct ContentView: View {
                         format: .currency(code: Locale.current.currencyCode ?? "USD")
                     )
                         .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
 
                     Picker("Number of people", selection: $numberOfPeople) {
                         ForEach(2..<100) {
@@ -61,6 +62,15 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("WeSplit")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
+                }
+            }
         }
     }
 }
