@@ -45,16 +45,26 @@ struct ContentView: View {
 
                 Section {
                     Picker("Tip percentage", selection: $tipPercentage) {
-                        ForEach(tipPercentages, id:\.self) {
+                        ForEach(0..<101, id:\.self) {
                             Text($0, format: .percent)
                         }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.wheel)
                 } header: {
                     Text("How much top do you want to leave?")
                 }
 
                 Section {
+                    Text(
+                        totalPerPerson,
+                        format: .currency(code: Locale.current.currencyCode ?? "USD")
+                    )
+                } header: {
+                    Text("Amount per person")
+                }
+
+                Section {
+                    // TODO: 원래 금액 + 팁 값 표시
                     Text(
                         totalPerPerson,
                         format: .currency(code: Locale.current.currencyCode ?? "USD")
@@ -65,7 +75,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
-                    
+
                     Button("Done") {
                         amountIsFocused = false
                     }
