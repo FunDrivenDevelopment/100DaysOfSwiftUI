@@ -24,15 +24,32 @@ struct TipPercent : View {
         Form {
             Section {
                 TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-                    .keyboardType(.decimalPad)
-            }
+                        .keyboardType(.decimalPad)
 
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(2 ..< 100) {
+                            Text("\($0) people")
+                        }
+                        .pickerStyle(.segmented)
+                    }
+            }
             Section {
                 Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+            } header: {
+                Text("How much tip do you want to leave?")
             }
         }
     }
- 
+}
+
+struct SelectPeople : View {
+    
+    var body: some View {
+        NavigationView {
+      
+                
+        }.navigationTitle("WeSplit")
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
