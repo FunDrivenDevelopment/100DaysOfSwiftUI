@@ -9,17 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Form{
-            Group{
-                Text("Hello, world!")
-                Text("Hello, world!")
-                Text("Hello, world!")
-            }
-            Group{
-                Text("Hello, world!").padding()
-                Text("Hello, world!").padding()
-                Text("Hello, world!").padding()
-            }
+        NavigationView {
+            Form{
+                Section {
+                    Group{
+                        Text("Hello, world!").padding()
+                        Text("Hello, world!").padding()
+                        Text("Hello, world!").padding()
+                    }
+                }
+            }.navigationTitle("SwiftUI").navigationBarTitleDisplayMode(.large)
         }
     }
 }
