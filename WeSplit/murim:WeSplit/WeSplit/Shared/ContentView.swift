@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var tapCount = 0
-    
-    var body: some View {
-           Button("Tap Count: \(tapCount)") {
-               self.tapCount = tapCount  + 1
+    @State var name = ""
+
+       var body: some View {
+           Form {
+               TextField("Enter your name", text: $name)
+               Text("Hello, world!")\    Text("Your name is \(name)")
            }
-    }
+       
+       }
+    
+ 
 }
 
 struct ContentView_Previews: PreviewProvider {
