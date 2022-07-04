@@ -12,6 +12,11 @@ struct ContentView: View {
     @State private var numberOfPeople: Int = 2
     @State private var tipPercentage: Int = 20
     private let tipPercentages: [Int] = [10, 15, 20, 25, 0]
+    private var total: Double {
+        let tipSelection = Double(tipPercentage)
+        let tipValue = checkAmount / 100 * tipSelection
+        return tipValue + checkAmount
+    }
     private var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
         let tipSelection = Double(tipPercentage)
@@ -23,6 +28,7 @@ struct ContentView: View {
         return amountPerPerson
     }
     @FocusState private var amountIsFocused: Bool
+    private let currencyFormatter: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.currencyCode ?? "USD")
 
     var body: some View {
         NavigationView {
@@ -55,20 +61,15 @@ struct ContentView: View {
                 }
 
                 Section {
-                    Text(
-                        totalPerPerson,
-                        format: .currency(code: Locale.current.currencyCode ?? "USD")
-                    )
+                    Text(totalPerPerson, format: currencyFormatter)
                 } header: {
                     Text("Amount per person")
                 }
 
                 Section {
-                    // TODO: 원래 금액 + 팁 값 표시
-                    Text(
-                        totalPerPerson,
-                        format: .currency(code: Locale.current.currencyCode ?? "USD")
-                    )
+                    Text(total, format: currencyFormatter)
+                } header: {
+                    Text("Total")
                 }
             }
             .navigationTitle("WeSplit")
