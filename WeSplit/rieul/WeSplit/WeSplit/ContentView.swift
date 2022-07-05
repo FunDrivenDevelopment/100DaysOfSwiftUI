@@ -12,17 +12,13 @@ struct ContentView: View {
     @State private var numberOfPeople: Int = 2
     @State private var tipPercentage: Int = 20
     private let tipPercentages: [Int] = [10, 15, 20, 25, 0]
-    private var total: Double {
+    private var grandTotal: Double {
         let tipSelection = Double(tipPercentage)
         let tipValue = checkAmount / 100 * tipSelection
         return tipValue + checkAmount
     }
     private var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
-        let tipSelection = Double(tipPercentage)
-
-        let tipValue = checkAmount / 100 * tipSelection
-        let grandTotal = checkAmount + tipValue
         let amountPerPerson = grandTotal / peopleCount
 
         return amountPerPerson
@@ -67,7 +63,7 @@ struct ContentView: View {
                 }
 
                 Section {
-                    Text(total, format: currencyFormatter)
+                    Text(grandTotal, format: currencyFormatter)
                 } header: {
                     Text("Total")
                 }
