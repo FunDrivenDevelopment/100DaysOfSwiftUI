@@ -19,7 +19,7 @@ Source: [100 Days of SwiftUI – Hacking with Swift](https://www.hackingwithswif
 
 | 진행 기간 | Project | 대영 | 리을 | 무림 | 밀사 | 셑셑 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | 
-| 2022-06-30 ~ 2022-07-05 | [We Split](https://www.hackingwithswift.com/100/swiftui/16) | README.md | README.md | README.md | README.md | README.md |
+| 2022-06-30 ~ 2022-07-05 | [We Split](https://www.hackingwithswift.com/100/swiftui/16) | README.md | [README.md](./WeSplit/rieul/README.md) | README.md | README.md | README.md |
 | - | [Guess the Flag](https://www.hackingwithswift.com/100/swiftui/20) | README.md | README.md | README.md | README.md | README.md |
 | - | [ViewsAndModifiers](https://www.hackingwithswift.com/100/swiftui/23) | README.md | README.md | README.md | README.md | README.md |
 | - | [RockPaperScissors](https://www.hackingwithswift.com/guide/ios-swiftui/2/3/challenge) | README.md | README.md | README.md | README.md | README.md |
