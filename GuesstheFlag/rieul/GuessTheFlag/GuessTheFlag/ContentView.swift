@@ -100,6 +100,7 @@ struct ContentView: View {
     func reset() {
         askQuestion()
         score = 0
+        numberOfGames = 0
     }
 }
 
