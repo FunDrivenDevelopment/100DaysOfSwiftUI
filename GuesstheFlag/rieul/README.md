@@ -1,5 +1,9 @@
 # Guess the Flag
 
+| 시작 화면 | 맞췄을 때 | 틀렸을 때 | 끝났을 때 |
+| :-: | :-: | :-: | :-: |
+| ![시작 화면](./images/main.png) | ![맞췄을 때](./images/correct.png) | ![틀렸을 때](./images/wrong.png) | ![끝났을 때](./images/done.png) |
+
 ## VStack
 
 - 내부에 뷰를 수직으로 배치
