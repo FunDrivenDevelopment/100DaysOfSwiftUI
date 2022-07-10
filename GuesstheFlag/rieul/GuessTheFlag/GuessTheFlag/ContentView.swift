@@ -89,16 +89,15 @@ struct ContentView: View {
         }
 
         showingScore = true
-        numberOfGames += 1
     }
 
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        numberOfGames += 1
     }
 
     func reset() {
-        askQuestion()
         score = 0
         numberOfGames = 0
     }
