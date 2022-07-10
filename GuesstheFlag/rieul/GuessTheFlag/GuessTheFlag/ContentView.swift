@@ -13,6 +13,15 @@ struct ContentView: View {
     @State private var showingScore: Bool = false
     @State private var scoreTitle: String = ""
     @State private var score: Int = 0
+    @State private var numberOfGames: Int = 0 {
+        didSet {
+            if numberOfGames >= maxGame {
+                isEnd = true
+            }
+        }
+    }
+    private let maxGame: Int = 8
+    @State private var isEnd: Bool = false
 
     var body: some View {
         ZStack {
@@ -64,6 +73,11 @@ struct ContentView: View {
         } message: {
             Text("Your score is \(score)")
         }
+        .alert("Done!", isPresented: $isEnd) {
+            Button("Reset", action: reset)
+        } message: {
+            Text("Your final score is \(score)")
+        }
     }
 
     func flagTapped(_ number: Int) {
@@ -75,11 +89,17 @@ struct ContentView: View {
         }
 
         showingScore = true
+        numberOfGames += 1
     }
 
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+    }
+
+    func reset() {
+        askQuestion()
+        score = 0
     }
 }
 
