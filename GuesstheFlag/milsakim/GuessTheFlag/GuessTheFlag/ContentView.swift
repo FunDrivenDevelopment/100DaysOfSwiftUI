@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let maxQuizCount: Int = 8
+    
     @State private var showingScoreAlert: Bool = false
     @State private var scoreAlertTitle: String = ""
+    
+    @State private var showingFinishAlert: Bool = false
     
     @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     @State var correctAnswer = Int.random(in: 0...2)
     
     @State private var score: Int = 0
     @State private var selectedIndex: Int = 0
+    @State private var quizCount: Int = 0 {
+        didSet {
+            if quizCount == maxQuizCount {
+                showingFinishAlert = true
+            }
+            else {
+                showingFinishAlert = false
+            }
+        }
+    }
     
     var isCorrect: Bool {
         correctAnswer == selectedIndex
@@ -35,7 +49,6 @@ struct ContentView: View {
                 Text("Guess the Flag")
                     .font(.largeTitle.bold())
                     .foregroundColor(.white)
-                
                 
                 VStack(spacing: 15) {
                     VStack {
@@ -66,7 +79,7 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
                 
-                Text("Score: \(score)")
+                Text("Score: \(score)/\(maxQuizCount)")
                     .font(.title.bold())
                     .foregroundColor(.white)
                 
@@ -76,9 +89,14 @@ struct ContentView: View {
             
         }
         .alert(scoreAlertTitle, isPresented: $showingScoreAlert) {
-            Button("Continue", action: askQuestion)
+            Button("Continue", action: continueQuiz)
         } message: {
             generateScoreAlertMessage()
+        }
+        .alert("Done!", isPresented: $showingFinishAlert) {
+            Button("Reset", action: resetAll)
+        } message: {
+            Text("You've got \(score) out of \(maxQuizCount)")
         }
     }
     
@@ -96,6 +114,13 @@ struct ContentView: View {
         showingScoreAlert = true
     }
     
+    func continueQuiz() {
+        if quizCount + 1 <= maxQuizCount {
+            quizCount += 1
+        }
+        askQuestion()
+    }
+    
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
@@ -108,6 +133,12 @@ struct ContentView: View {
         else {
             return Text("Wrong! That's the flag of \(countries[selectedIndex])")
         }
+    }
+    
+    func resetAll() {
+        score = 0
+        quizCount = 0
+        askQuestion()
     }
 }
 
