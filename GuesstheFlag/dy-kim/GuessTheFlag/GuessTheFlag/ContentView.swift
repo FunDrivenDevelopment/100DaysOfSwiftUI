@@ -30,8 +30,21 @@ struct ContentView: View {
             background
 
             VStack {
-                question
-                flags
+                Spacer()
+
+                Text("Guess The Flag")
+                    .foregroundStyle(.white)
+                    .font(.largeTitle.bold())
+
+                Spacer()
+
+                content
+                    .padding()
+
+                Spacer()
+                Spacer()
+
+                scoreDisplay
             }
         }
         .alert(scoreTitle, isPresented: $showingScore) {
@@ -42,14 +55,40 @@ struct ContentView: View {
     }
 
     var background: some View {
-        Color.brown
+        RadialGradient(stops: [
+            .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.1),
+            .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 1)
+        ], center: .top, startRadius: 200, endRadius: 600)
             .ignoresSafeArea()
     }
 
+    var content: some View {
+        VStack(spacing: 20) {
+            question
+            flags
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 30)
+        .background(.thinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 30))
+    }
+
+    var scoreDisplay: some View {
+        Text("Score: \(totalScore)")
+            .foregroundStyle(.primary)
+            .font(.title2.bold())
+            .padding()
+            .background(.thinMaterial)
+            .clipShape(Capsule())
+    }
+
     var question: some View {
-        VStack {
+        VStack() {
             Text("Tap the flag of")
+                .font(.subheadline.weight(.heavy))
+
             Text(answerCountury)
+                .font(.title.weight(.semibold))
         }
     }
 
@@ -58,6 +97,8 @@ struct ContentView: View {
             Button { flagTapped(index) } label: {
                 Image(conturies[index])
                     .renderingMode(.original)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .shadow(radius: 5)
             }
         }
     }
@@ -75,7 +116,7 @@ struct ContentView: View {
 
     func renewQuestion() {
         conturies.shuffle()
-        answerIndex = .random(in: 0...numberOfOptions)
+        answerIndex = .random(in: 0...(numberOfOptions - 1))
     }
 }
 
