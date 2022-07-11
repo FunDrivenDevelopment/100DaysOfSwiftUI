@@ -15,8 +15,8 @@ struct TemperatureConverterView: View {
     let temperatureUnits: [UnitTemperature] = [.celsius, .fahrenheit, .kelvin]
 
     private var temperatureConverted: Measurement<UnitTemperature> {
-        let input = Measurement(value: self.temperature, unit: self.temperatureInputUnit)
-        let output = input.converted(to: self.temperatureOutputUnit)
+        let input = Measurement(value: temperature, unit: temperatureInputUnit)
+        let output = input.converted(to: temperatureOutputUnit)
         return output
     }
 
@@ -28,39 +28,41 @@ struct TemperatureConverterView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Form {
-                    Section {
-                        TextField("Input Temperature", value: $temperature, format: .number)
-                    } header: {
-                        Text("Input")
-                    }
+            Form {
+                Section {
+                    TextField("Input Temperature", value: $temperature, format: .number)
+                } header: {
+                    Text("Input").font(.headline)
+                }
 
-                    Section {
-                        Picker("Input Unit", selection: $temperatureInputUnit) {
-                            ForEach(temperatureUnits, id: \.self) {
-                                Text($0.symbol)
-                            }
+                Section {
+                    Picker("Input Unit", selection: $temperatureInputUnit) {
+                        ForEach(temperatureUnits, id: \.self) {
+                            Text($0.symbol)
                         }
-                        .pickerStyle(.segmented)
-                        .listRowBackground(Color(.secondarySystemBackground))
-                    } header: {
-                        Text("Input Unit")
                     }
+                    .pickerStyle(.segmented)
+                    .listRowBackground(Color(.secondarySystemBackground))
+                } header: {
+                    Text("Input Unit")
+                }
 
-                    Section {
-                        Picker("Output Unit", selection: $temperatureOutputUnit) {
-                            ForEach(temperatureUnits, id: \.self) {
-                                Text($0.symbol)
-                            }
+                Section {
+                    Text(formatter.string(from: temperatureConverted))
+                } header: {
+                    Text("Output").font(.headline)
+                }
+
+                Section {
+                    Picker("Output Unit", selection: $temperatureOutputUnit) {
+                        ForEach(temperatureUnits, id: \.self) {
+                            Text($0.symbol)
                         }
-                        .pickerStyle(.segmented)
-                        .listRowBackground(Color(.secondarySystemBackground))
-                    } header: {
-                        Text("Output Unit")
                     }
-
-                    Text(self.formatter.string(from: temperatureConverted))
+                    .pickerStyle(.segmented)
+                    .listRowBackground(Color(.secondarySystemBackground))
+                } header: {
+                    Text("Output Unit")
                 }
             }
             .navigationTitle("Temperature 🔃")
