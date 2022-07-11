@@ -15,6 +15,11 @@ struct ContentView: View {
     @State var correctAnswer = Int.random(in: 0...2)
     
     @State private var score: Int = 0
+    @State private var selectedIndex: Int = 0
+    
+    var isCorrect: Bool {
+        correctAnswer == selectedIndex
+    }
     
     var body: some View {
         ZStack {
@@ -73,12 +78,14 @@ struct ContentView: View {
         .alert(scoreAlertTitle, isPresented: $showingScoreAlert) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score is \(score)")
+            generateScoreAlertMessage()
         }
     }
     
     func flagTapped(_ index: Int) {
-        if index == correctAnswer {
+        selectedIndex = index
+        
+        if isCorrect {
             scoreAlertTitle = "Correct"
             score += 1
         }
@@ -92,6 +99,15 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func generateScoreAlertMessage() -> Text {
+        if isCorrect {
+            return Text("Your score is \(score)")
+        }
+        else {
+            return Text("Wrong! That's the flag of \(countries[selectedIndex])")
+        }
     }
 }
 
