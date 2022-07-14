@@ -10,19 +10,24 @@ import SwiftUI
 struct ContentView: View {
     private let numberOfOptions: Int
     private let scorePerAnswer: Int = 100
+    private let numberOfQuestions: Int
 
     @State private var conturies = ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
-    @State private  var answerIndex: Int
+    @State private var answerIndex: Int
 
     var answerCountury: String { conturies[answerIndex] }
 
     @State private var showingScore = false
+    @State private var showingGameSummary = false
+
     @State private var scoreTitle = ""
     @State private var totalScore: Int = 0
+    @State private var gameStage: Int = 1
 
-    init(numberOfOptions: Int = 3) {
+    init(numberOfOptions: Int = 3, numberOfQuestions: Int = 8) {
         self.numberOfOptions = numberOfOptions
-        self.answerIndex = .random(in: 0...numberOfOptions)
+        self.answerIndex = .random(in: 0..<numberOfOptions)
+        self.numberOfQuestions = numberOfQuestions
     }
 
     var body: some View {
@@ -49,8 +54,11 @@ struct ContentView: View {
         }
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: renewQuestion)
+        }
+        .alert("Game Over", isPresented: $showingGameSummary) {
+            Button("Finish", action: renewGame)
         } message: {
-            Text("Your score is \(totalScore)")
+            Text("Your final score is \(totalScore)")
         }
     }
 
@@ -74,12 +82,18 @@ struct ContentView: View {
     }
 
     var scoreDisplay: some View {
-        Text("Score: \(totalScore)")
-            .foregroundStyle(.primary)
-            .font(.title2.bold())
-            .padding()
-            .background(.thinMaterial)
-            .clipShape(Capsule())
+        VStack {
+            Text("Stage \(gameStage)/\(numberOfQuestions)")
+                .font(.subheadline)
+
+            Text("Score: \(totalScore)")
+                .foregroundStyle(.primary)
+                .font(.title2.bold())
+        }
+        .padding()
+        .padding(.horizontal)
+        .background(.thinMaterial)
+        .clipShape(Capsule())
     }
 
     var question: some View {
@@ -104,19 +118,34 @@ struct ContentView: View {
     }
 
     func flagTapped(_ index: Int) {
-        if conturies[index] == answerCountury {
-            scoreTitle = "Correct!"
-            totalScore += scorePerAnswer
-        } else {
-            scoreTitle = "Wrong!"
-        }
+        let conturySelected = conturies[index]
+        let isAnswerCorrect = conturySelected == answerCountury
+        let isLastStage = gameStage == numberOfQuestions
 
-        showingScore = true
+        scoreTitle = isAnswerCorrect ? "Correct!" : "Wrong! That’s the flag of \(conturySelected)"
+        totalScore += isAnswerCorrect ? scorePerAnswer : 0
+
+        if (isLastStage) {
+            showingGameSummary = true
+        } else {
+            showingScore = true
+        }
+    }
+
+    var feedbackMessage: some View {
+        Text("Your score is \(totalScore)")
     }
 
     func renewQuestion() {
+        gameStage += 1
         conturies.shuffle()
         answerIndex = .random(in: 0...(numberOfOptions - 1))
+    }
+
+    func renewGame() {
+        renewQuestion()
+        totalScore = 0
+        gameStage = 1
     }
 }
 
