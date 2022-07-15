@@ -109,10 +109,7 @@ struct ContentView: View {
     var flags: some View {
         ForEach(0..<numberOfOptions, id: \.self) { index in
             Button { flagTapped(index) } label: {
-                Image(conturies[index])
-                    .renderingMode(.original)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .shadow(radius: 5)
+                FlagImage(conturies[index])
             }
         }
     }
