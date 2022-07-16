@@ -14,6 +14,7 @@
 		87335FE82882F1D900CB5E76 /* CapsuleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FE72882F1D900CB5E76 /* CapsuleText.swift */; };
 		87335FEA2882F2A500CB5E76 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FE92882F2A500CB5E76 /* Title.swift */; };
 		87335FEC2882F33200CB5E76 /* Watermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FEB2882F33200CB5E76 /* Watermark.swift */; };
+		87335FEE2882F47100CB5E76 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FED2882F47100CB5E76 /* GridStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		87335FE72882F1D900CB5E76 /* CapsuleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleText.swift; sourceTree = "<group>"; };
 		87335FE92882F2A500CB5E76 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		87335FEB2882F33200CB5E76 /* Watermark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watermark.swift; sourceTree = "<group>"; };
+		87335FED2882F47100CB5E76 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				87335FD92882E94D00CB5E76 /* ViewsAndModifiersApp.swift */,
 				87335FDB2882E94D00CB5E76 /* ContentView.swift */,
+				87335FED2882F47100CB5E76 /* GridStack.swift */,
 				87335FE92882F2A500CB5E76 /* Title.swift */,
 				87335FE72882F1D900CB5E76 /* CapsuleText.swift */,
 				87335FDD2882E94F00CB5E76 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 			files = (
 				87335FEA2882F2A500CB5E76 /* Title.swift in Sources */,
 				87335FEC2882F33200CB5E76 /* Watermark.swift in Sources */,
+				87335FEE2882F47100CB5E76 /* GridStack.swift in Sources */,
 				87335FDC2882E94D00CB5E76 /* ContentView.swift in Sources */,
 				87335FDA2882E94D00CB5E76 /* ViewsAndModifiersApp.swift in Sources */,
 				87335FE82882F1D900CB5E76 /* CapsuleText.swift in Sources */,
