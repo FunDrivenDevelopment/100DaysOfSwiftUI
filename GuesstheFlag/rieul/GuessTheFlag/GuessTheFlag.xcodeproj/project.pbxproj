@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87335FF22883022000CB5E76 /* Image+flagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FF12883022000CB5E76 /* Image+flagImage.swift */; };
 		879E750F287AF56900A969BF /* GuessTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879E750E287AF56900A969BF /* GuessTheFlagApp.swift */; };
 		879E7511287AF56900A969BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879E7510287AF56900A969BF /* ContentView.swift */; };
 		879E7513287AF56B00A969BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879E7512287AF56B00A969BF /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87335FF12883022000CB5E76 /* Image+flagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+flagImage.swift"; sourceTree = "<group>"; };
 		879E750B287AF56900A969BF /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879E750E287AF56900A969BF /* GuessTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagApp.swift; sourceTree = "<group>"; };
 		879E7510287AF56900A969BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		879E750D287AF56900A969BF /* GuessTheFlag */ = {
 			isa = PBXGroup;
 			children = (
+				87335FF12883022000CB5E76 /* Image+flagImage.swift */,
 				879E750E287AF56900A969BF /* GuessTheFlagApp.swift */,
 				879E7510287AF56900A969BF /* ContentView.swift */,
 				879E7512287AF56B00A969BF /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				879E7511287AF56900A969BF /* ContentView.swift in Sources */,
+				87335FF22883022000CB5E76 /* Image+flagImage.swift in Sources */,
 				879E750F287AF56900A969BF /* GuessTheFlagApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
