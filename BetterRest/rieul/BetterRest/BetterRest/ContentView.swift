@@ -9,7 +9,7 @@ import CoreML
 import SwiftUI
 
 struct ContentView: View {
-    @State private var wakeUp: Date = .now
+    @State private var wakeUp: Date = defaultWakeTime
     @State private var sleepAmount: Double = 8.0
     @State private var coffeeAmount: Int = 1
 
@@ -17,37 +17,21 @@ struct ContentView: View {
     @State private var alertMessage: String = ""
     @State private var showingAlert: Bool = false
 
+    static var defaultWakeTime: Date {
+        var components: DateComponents = DateComponents()
+        components.hour = 7
+        components.minute = 0
+        return Calendar.current.date(from: components) ?? .now
+    }
+
     var body: some View {
         NavigationView {
-            VStack {
-                Text("When do you want to wake up?")
-                    .font(.headline)
+            Form {
+                wakeUpView
 
-                DatePicker(
-                    "Please enter a time",
-                    selection: $wakeUp,
-                    displayedComponents: .hourAndMinute
-                )
-                    .labelsHidden()
+                sleepView
 
-                Text("Desired amount of sleep")
-                    .font(.headline)
-
-                Stepper(
-                    "\(sleepAmount.formatted()) hours",
-                    value: $sleepAmount,
-                    in: 4...12,
-                    step: 0.25
-                )
-
-                Text("Daily coffee intake")
-                    .font(.headline)
-
-                Stepper(
-                    coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups",
-                    value: $coffeeAmount,
-                    in: 1...20
-                )
+                coffeeView
             }
             .navigationTitle("BetterRest")
             .toolbar {
@@ -58,6 +42,47 @@ struct ContentView: View {
             } message: {
                 Text(alertMessage)
             }
+        }
+    }
+
+    var wakeUpView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("When do you want to wake up?")
+                .font(.headline)
+
+            DatePicker(
+                "Please enter a time",
+                selection: $wakeUp,
+                displayedComponents: .hourAndMinute
+            )
+                .labelsHidden()
+        }
+    }
+
+    var sleepView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Desired amount of sleep")
+                .font(.headline)
+
+            Stepper(
+                "\(sleepAmount.formatted()) hours",
+                value: $sleepAmount,
+                in: 4...12,
+                step: 0.25
+            )
+        }
+    }
+
+    var coffeeView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Daily coffee intake")
+                .font(.headline)
+
+            Stepper(
+                coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups",
+                value: $coffeeAmount,
+                in: 1...20
+            )
         }
     }
 
@@ -82,6 +107,7 @@ struct ContentView: View {
             let sleepTime: Date = wakeUp - prediction.actualSleep
             alertTitle = "Your ideal bedtime is..."
             alertMessage = sleepTime.formatted(date: .omitted, time: .shortened)
+            showingAlert = true
         } catch {
             alertTitle = "Error"
             alertMessage = "Sorry, there was a problem calculating you bedtime"
