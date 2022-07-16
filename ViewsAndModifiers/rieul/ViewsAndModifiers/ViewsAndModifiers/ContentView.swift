@@ -11,10 +11,14 @@ struct ContentView: View {
     @State private var useRedText: Bool = false
 
     var body: some View {
-        Button("Hello, world!") {
-            useRedText.toggle()
+        VStack {
+            Text("Gryffindor")
+                .font(.largeTitle)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
         }
-        .foregroundColor(useRedText ? .red : .blue)
+        .font(.title)
     }
 }
 
