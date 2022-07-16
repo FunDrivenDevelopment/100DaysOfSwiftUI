@@ -7,24 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87335FF22883022000CB5E76 /* Image+flagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FF12883022000CB5E76 /* Image+flagImage.swift */; };
-		879E750F287AF56900A969BF /* GuessTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879E750E287AF56900A969BF /* GuessTheFlagApp.swift */; };
-		879E7511287AF56900A969BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879E7510287AF56900A969BF /* ContentView.swift */; };
-		879E7513287AF56B00A969BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879E7512287AF56B00A969BF /* Assets.xcassets */; };
-		879E7516287AF56B00A969BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879E7515287AF56B00A969BF /* Preview Assets.xcassets */; };
+		87335FDA2882E94D00CB5E76 /* ViewsAndModifiersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FD92882E94D00CB5E76 /* ViewsAndModifiersApp.swift */; };
+		87335FDC2882E94D00CB5E76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FDB2882E94D00CB5E76 /* ContentView.swift */; };
+		87335FDE2882E94F00CB5E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87335FDD2882E94F00CB5E76 /* Assets.xcassets */; };
+		87335FE12882E94F00CB5E76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87335FE02882E94F00CB5E76 /* Preview Assets.xcassets */; };
+		87335FE82882F1D900CB5E76 /* CapsuleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FE72882F1D900CB5E76 /* CapsuleText.swift */; };
+		87335FEA2882F2A500CB5E76 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FE92882F2A500CB5E76 /* Title.swift */; };
+		87335FEC2882F33200CB5E76 /* Watermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FEB2882F33200CB5E76 /* Watermark.swift */; };
+		87335FEE2882F47100CB5E76 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FED2882F47100CB5E76 /* GridStack.swift */; };
+		87335FF42883032C00CB5E76 /* LargeBlueTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FF32883032C00CB5E76 /* LargeBlueTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87335FF12883022000CB5E76 /* Image+flagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+flagImage.swift"; sourceTree = "<group>"; };
-		879E750B287AF56900A969BF /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		879E750E287AF56900A969BF /* GuessTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagApp.swift; sourceTree = "<group>"; };
-		879E7510287AF56900A969BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		879E7512287AF56B00A969BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		879E7515287AF56B00A969BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		87335FD62882E94D00CB5E76 /* ViewsAndModifiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewsAndModifiers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87335FD92882E94D00CB5E76 /* ViewsAndModifiersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsAndModifiersApp.swift; sourceTree = "<group>"; };
+		87335FDB2882E94D00CB5E76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		87335FDD2882E94F00CB5E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87335FE02882E94F00CB5E76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		87335FE72882F1D900CB5E76 /* CapsuleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleText.swift; sourceTree = "<group>"; };
+		87335FE92882F2A500CB5E76 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		87335FEB2882F33200CB5E76 /* Watermark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watermark.swift; sourceTree = "<group>"; };
+		87335FED2882F47100CB5E76 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		87335FF32883032C00CB5E76 /* LargeBlueTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBlueTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		879E7508287AF56900A969BF /* Frameworks */ = {
+		87335FD32882E94D00CB5E76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,38 +42,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		879E7502287AF56900A969BF = {
+		87335FCD2882E94D00CB5E76 = {
 			isa = PBXGroup;
 			children = (
-				879E750D287AF56900A969BF /* GuessTheFlag */,
-				879E750C287AF56900A969BF /* Products */,
+				87335FD82882E94D00CB5E76 /* ViewsAndModifiers */,
+				87335FD72882E94D00CB5E76 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		879E750C287AF56900A969BF /* Products */ = {
+		87335FD72882E94D00CB5E76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				879E750B287AF56900A969BF /* GuessTheFlag.app */,
+				87335FD62882E94D00CB5E76 /* ViewsAndModifiers.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		879E750D287AF56900A969BF /* GuessTheFlag */ = {
+		87335FD82882E94D00CB5E76 /* ViewsAndModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				87335FF12883022000CB5E76 /* Image+flagImage.swift */,
-				879E750E287AF56900A969BF /* GuessTheFlagApp.swift */,
-				879E7510287AF56900A969BF /* ContentView.swift */,
-				879E7512287AF56B00A969BF /* Assets.xcassets */,
-				879E7514287AF56B00A969BF /* Preview Content */,
+				87335FD92882E94D00CB5E76 /* ViewsAndModifiersApp.swift */,
+				87335FDB2882E94D00CB5E76 /* ContentView.swift */,
+				87335FED2882F47100CB5E76 /* GridStack.swift */,
+				87335FE92882F2A500CB5E76 /* Title.swift */,
+				87335FE72882F1D900CB5E76 /* CapsuleText.swift */,
+				87335FDD2882E94F00CB5E76 /* Assets.xcassets */,
+				87335FDF2882E94F00CB5E76 /* Preview Content */,
+				87335FEB2882F33200CB5E76 /* Watermark.swift */,
+				87335FF32883032C00CB5E76 /* LargeBlueTitle.swift */,
 			);
-			path = GuessTheFlag;
+			path = ViewsAndModifiers;
 			sourceTree = "<group>";
 		};
-		879E7514287AF56B00A969BF /* Preview Content */ = {
+		87335FDF2882E94F00CB5E76 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				879E7515287AF56B00A969BF /* Preview Assets.xcassets */,
+				87335FE02882E94F00CB5E76 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -73,39 +85,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		879E750A287AF56900A969BF /* GuessTheFlag */ = {
+		87335FD52882E94D00CB5E76 /* ViewsAndModifiers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 879E7519287AF56B00A969BF /* Build configuration list for PBXNativeTarget "GuessTheFlag" */;
+			buildConfigurationList = 87335FE42882E94F00CB5E76 /* Build configuration list for PBXNativeTarget "ViewsAndModifiers" */;
 			buildPhases = (
-				879E7507287AF56900A969BF /* Sources */,
-				879E7508287AF56900A969BF /* Frameworks */,
-				879E7509287AF56900A969BF /* Resources */,
+				87335FD22882E94D00CB5E76 /* Sources */,
+				87335FD32882E94D00CB5E76 /* Frameworks */,
+				87335FD42882E94D00CB5E76 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = GuessTheFlag;
-			productName = GuessTheFlag;
-			productReference = 879E750B287AF56900A969BF /* GuessTheFlag.app */;
+			name = ViewsAndModifiers;
+			productName = ViewsAndModifiers;
+			productReference = 87335FD62882E94D00CB5E76 /* ViewsAndModifiers.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		879E7503287AF56900A969BF /* Project object */ = {
+		87335FCE2882E94D00CB5E76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					879E750A287AF56900A969BF = {
+					87335FD52882E94D00CB5E76 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 879E7506287AF56900A969BF /* Build configuration list for PBXProject "GuessTheFlag" */;
+			buildConfigurationList = 87335FD12882E94D00CB5E76 /* Build configuration list for PBXProject "ViewsAndModifiers" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,43 +125,47 @@
 				en,
 				Base,
 			);
-			mainGroup = 879E7502287AF56900A969BF;
-			productRefGroup = 879E750C287AF56900A969BF /* Products */;
+			mainGroup = 87335FCD2882E94D00CB5E76;
+			productRefGroup = 87335FD72882E94D00CB5E76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				879E750A287AF56900A969BF /* GuessTheFlag */,
+				87335FD52882E94D00CB5E76 /* ViewsAndModifiers */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		879E7509287AF56900A969BF /* Resources */ = {
+		87335FD42882E94D00CB5E76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				879E7516287AF56B00A969BF /* Preview Assets.xcassets in Resources */,
-				879E7513287AF56B00A969BF /* Assets.xcassets in Resources */,
+				87335FE12882E94F00CB5E76 /* Preview Assets.xcassets in Resources */,
+				87335FDE2882E94F00CB5E76 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		879E7507287AF56900A969BF /* Sources */ = {
+		87335FD22882E94D00CB5E76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				879E7511287AF56900A969BF /* ContentView.swift in Sources */,
-				87335FF22883022000CB5E76 /* Image+flagImage.swift in Sources */,
-				879E750F287AF56900A969BF /* GuessTheFlagApp.swift in Sources */,
+				87335FEA2882F2A500CB5E76 /* Title.swift in Sources */,
+				87335FEC2882F33200CB5E76 /* Watermark.swift in Sources */,
+				87335FEE2882F47100CB5E76 /* GridStack.swift in Sources */,
+				87335FDC2882E94D00CB5E76 /* ContentView.swift in Sources */,
+				87335FDA2882E94D00CB5E76 /* ViewsAndModifiersApp.swift in Sources */,
+				87335FF42883032C00CB5E76 /* LargeBlueTitle.swift in Sources */,
+				87335FE82882F1D900CB5E76 /* CapsuleText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		879E7517287AF56B00A969BF /* Debug */ = {
+		87335FE22882E94F00CB5E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -200,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -210,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		879E7518287AF56B00A969BF /* Release */ = {
+		87335FE32882E94F00CB5E76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -265,14 +281,14 @@
 			};
 			name = Release;
 		};
-		879E751A287AF56B00A969BF /* Debug */ = {
+		87335FE52882E94F00CB5E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ViewsAndModifiers/Preview Content\"";
 				DEVELOPMENT_TEAM = F95C5R6HLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -286,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.GuessTheFlag;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.ViewsAndModifiers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -294,14 +310,14 @@
 			};
 			name = Debug;
 		};
-		879E751B287AF56B00A969BF /* Release */ = {
+		87335FE62882E94F00CB5E76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ViewsAndModifiers/Preview Content\"";
 				DEVELOPMENT_TEAM = F95C5R6HLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -315,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.GuessTheFlag;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.ViewsAndModifiers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -326,25 +342,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		879E7506287AF56900A969BF /* Build configuration list for PBXProject "GuessTheFlag" */ = {
+		87335FD12882E94D00CB5E76 /* Build configuration list for PBXProject "ViewsAndModifiers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				879E7517287AF56B00A969BF /* Debug */,
-				879E7518287AF56B00A969BF /* Release */,
+				87335FE22882E94F00CB5E76 /* Debug */,
+				87335FE32882E94F00CB5E76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		879E7519287AF56B00A969BF /* Build configuration list for PBXNativeTarget "GuessTheFlag" */ = {
+		87335FE42882E94F00CB5E76 /* Build configuration list for PBXNativeTarget "ViewsAndModifiers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				879E751A287AF56B00A969BF /* Debug */,
-				879E751B287AF56B00A969BF /* Release */,
+				87335FE52882E94F00CB5E76 /* Debug */,
+				87335FE62882E94F00CB5E76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 879E7503287AF56900A969BF /* Project object */;
+	rootObject = 87335FCE2882E94D00CB5E76 /* Project object */;
 }
