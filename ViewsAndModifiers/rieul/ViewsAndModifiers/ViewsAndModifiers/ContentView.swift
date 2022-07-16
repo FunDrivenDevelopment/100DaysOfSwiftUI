@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var useRedText: Bool = false
+    let motto1: Text = Text("Draco dormiens")
+    let motto2: Text = Text("numquam titillandus")
 
     var body: some View {
         VStack {
-            Text("Gryffindor")
-                .font(.largeTitle)
-            Text("Hufflepuff")
-            Text("Ravenclaw")
-            Text("Slytherin")
+            motto1
+                .foregroundColor(.red)
+            motto2
+                .foregroundColor(.blue)
         }
-        .font(.title)
     }
 }
 
