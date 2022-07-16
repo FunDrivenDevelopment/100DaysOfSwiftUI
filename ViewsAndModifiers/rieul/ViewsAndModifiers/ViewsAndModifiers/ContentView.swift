@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        GridStack(rows: 4, columns: 4) { row, column in
-//            HStack {
+        VStack {
+            Text("왕왕 큰 파랑색 타이틀")
+                .largeBlueTitle()
+            GridStack(rows: 4, columns: 4) { row, column in
                 Image(systemName: "\(row * 4 + column).circle")
                 Text("R\(row) C\(column)")
-//            }
+            }
         }
     }
 }

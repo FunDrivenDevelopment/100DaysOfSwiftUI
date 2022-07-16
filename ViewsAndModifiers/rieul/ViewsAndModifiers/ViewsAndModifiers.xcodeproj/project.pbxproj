@@ -15,6 +15,7 @@
 		87335FEA2882F2A500CB5E76 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FE92882F2A500CB5E76 /* Title.swift */; };
 		87335FEC2882F33200CB5E76 /* Watermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FEB2882F33200CB5E76 /* Watermark.swift */; };
 		87335FEE2882F47100CB5E76 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FED2882F47100CB5E76 /* GridStack.swift */; };
+		87335FF42883032C00CB5E76 /* LargeBlueTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87335FF32883032C00CB5E76 /* LargeBlueTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		87335FE92882F2A500CB5E76 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		87335FEB2882F33200CB5E76 /* Watermark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watermark.swift; sourceTree = "<group>"; };
 		87335FED2882F47100CB5E76 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		87335FF32883032C00CB5E76 /* LargeBlueTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBlueTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				87335FDD2882E94F00CB5E76 /* Assets.xcassets */,
 				87335FDF2882E94F00CB5E76 /* Preview Content */,
 				87335FEB2882F33200CB5E76 /* Watermark.swift */,
+				87335FF32883032C00CB5E76 /* LargeBlueTitle.swift */,
 			);
 			path = ViewsAndModifiers;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				87335FEE2882F47100CB5E76 /* GridStack.swift in Sources */,
 				87335FDC2882E94D00CB5E76 /* ContentView.swift in Sources */,
 				87335FDA2882E94D00CB5E76 /* ViewsAndModifiersApp.swift in Sources */,
+				87335FF42883032C00CB5E76 /* LargeBlueTitle.swift in Sources */,
 				87335FE82882F1D900CB5E76 /* CapsuleText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
