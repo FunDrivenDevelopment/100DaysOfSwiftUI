@@ -65,3 +65,7 @@ body 와 달리 @ViewBuilder 속성이 자동으로 붙지 않기 때문에 주�
 2. Group 으로 wrapping (View 의 배열은 이 프로퍼티를 사용하는 곳에서 사용하는 방식에 따라 변함)
 3. @ViewBuilder 프로퍼티를 직접 추가
 
+## ViewModifier 프로토콜
+
+`font()`, `background()` 같은 커스텀 수정자를 만들때는 ViewModifier 프로토콜을 채택한 구조체를 만든다.
+
