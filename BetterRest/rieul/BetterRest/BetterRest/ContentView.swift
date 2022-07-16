@@ -46,10 +46,7 @@ struct ContentView: View {
     }
 
     var wakeUpView: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("When do you want to wake up?")
-                .font(.headline)
-
+        Section("When do you want to wake up?") {
             DatePicker(
                 "Please enter a time",
                 selection: $wakeUp,
@@ -60,10 +57,7 @@ struct ContentView: View {
     }
 
     var sleepView: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("Desired amount of sleep")
-                .font(.headline)
-
+        Section("Desired amount of sleep") {
             Stepper(
                 "\(sleepAmount.formatted()) hours",
                 value: $sleepAmount,
@@ -74,10 +68,7 @@ struct ContentView: View {
     }
 
     var coffeeView: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("Daily coffee intake")
-                .font(.headline)
-
+        Section("Daily coffee intake") {
             Stepper(
                 coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups",
                 value: $coffeeAmount,
