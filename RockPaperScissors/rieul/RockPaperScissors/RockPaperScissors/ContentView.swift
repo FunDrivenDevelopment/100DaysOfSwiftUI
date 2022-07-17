@@ -17,21 +17,45 @@ struct ContentView: View {
     @State private var isEnd: Bool = false
 
     var body: some View {
-        VStack {
-            Text("플레이어의 점수: \(score)")
-                .padding()
-
-            Text("앱의 움직임: \(handShapes[answer].name)")
-                .padding()
-
-            Text("앱을 이겨야 하나요?: \(shouldWin ? "네" : "아니오")")
-                .padding()
-
-            ForEach(handShapes, id: \.name) { handShape in
-                Button(handShape.name) {
-                    calculateScore(for: handShape)
+        Form {
+            Section {
+                HStack {
+                    Text("플레이어의 점수")
+                    Spacer()
+                    Text("\(score)")
                 }
-                .padding()
+
+                HStack {
+                    Text("앱의 움직임")
+                    Spacer()
+                    Text("\(handShapes[answer].name)")
+                }
+
+                HStack {
+                    Text("앱을 이겨야 하나요?")
+                    Spacer()
+                    Text("\(shouldWin ? "네" : "아니오")")
+                }
+
+                HStack {
+                    Text("현재 진행 상황")
+                    Spacer()
+                    Text("\(numberOfGames) / \(maxOfGames)")
+                }
+
+            } header: {
+                Text("게임 정보:")
+            }
+
+            Section {
+                ForEach(handShapes, id: \.name) { handShape in
+                    Button(handShape.name) {
+                        calculateScore(for: handShape)
+                    }
+                    .padding()
+                }
+            } header: {
+                Text("선택하세요:")
             }
         }
         .alert("게임 종료!", isPresented: $isEnd) {
