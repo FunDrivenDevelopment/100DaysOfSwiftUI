@@ -69,11 +69,14 @@ struct ContentView: View {
 
     var coffeeView: some View {
         Section("Daily coffee intake") {
-            Stepper(
+            Picker(
                 coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups",
-                value: $coffeeAmount,
-                in: 1...20
-            )
+                selection: $coffeeAmount
+            ) {
+                ForEach(0..<21) { coffee in
+                    Text("\(coffee)")
+                }
+            }
         }
     }
 
