@@ -19,30 +19,13 @@ struct ContentView: View {
     var body: some View {
         Form {
             Section {
-                HStack {
-                    Text("플레이어의 점수")
-                    Spacer()
-                    Text("\(score)")
-                }
+                RowView(leadingText: "플레이어의 점수", trailingText: "\(score)")
 
-                HStack {
-                    Text("앱의 움직임")
-                    Spacer()
-                    Text("\(handShapes[answer].name)")
-                }
+                RowView(leadingText: "앱의 움직임", trailingText: "\(handShapes[answer].name)")
 
-                HStack {
-                    Text("앱을 이겨야 하나요?")
-                    Spacer()
-                    Text("\(shouldWin ? "네" : "아니오")")
-                }
+                RowView(leadingText: "앱을 이겨야 하나요?", trailingText: "\(shouldWin ? "네" : "아니오")")
 
-                HStack {
-                    Text("현재 진행 상황")
-                    Spacer()
-                    Text("\(numberOfGames) / \(maxOfGames)")
-                }
-
+                RowView(leadingText: "현재 진행 상황", trailingText: "\(numberOfGames) / \(maxOfGames)")
             } header: {
                 Text("게임 정보:")
             }
