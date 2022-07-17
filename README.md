@@ -19,12 +19,12 @@ Source: [100 Days of SwiftUI – Hacking with Swift](https://www.hackingwithswif
 
 | 진행 기간 | Project | 대영 | 리을 | 무림 | 밀사 | 셑셑 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | 
-| 2022-06-30 ~ 2022-07-05 | [We Split](https://www.hackingwithswift.com/100/swiftui/16) | README | [README](./WeSplit/rieul/README.md) | README | README | README |
-| 2022-07-06 ~ 2022-07-11 | [Converter](https://www.hackingwithswift.com/100/swiftui/19) | README | README | README | README | README |
-| 2022-07-06 ~ 2022-07-11 | [Guess the Flag](https://www.hackingwithswift.com/100/swiftui/20) | README | README | README | README | README |
-| - | [ViewsAndModifiers](https://www.hackingwithswift.com/100/swiftui/23) | README | README | README | README | README |
-| - | [RockPaperScissors](https://www.hackingwithswift.com/guide/ios-swiftui/2/3/challenge) | README | README | README | README | README |
-| - | [BetterRest](https://www.hackingwithswift.com/100/swiftui/26) | README | README | README | README | README |
+| 06-30 ~ 07-05 | [We Split](https://www.hackingwithswift.com/100/swiftui/16) | README | [README](./WeSplit/rieul/README.md) | README | README | README |
+| 07-06 ~ 07-11 | [Converter](https://www.hackingwithswift.com/100/swiftui/19) | README | README | README | README | README |
+| 07-06 ~ 07-11 | [Guess the Flag](https://www.hackingwithswift.com/100/swiftui/20) | README | [README](./GuesstheFlag/rieul/README.md) | README | README | README |
+| 07-13 ~ 07-21 | [ViewsAndModifiers](https://www.hackingwithswift.com/100/swiftui/23) | README | [README](./ViewsAndModifiers/rieul/README.md) | README | README | README |
+| 07-13 ~ 07-19 | [RockPaperScissors](https://www.hackingwithswift.com/guide/ios-swiftui/2/3/challenge) | README | README | README | README | README |
+| 07-13 ~ 07-21 | [BetterRest](https://www.hackingwithswift.com/100/swiftui/26) | README | [README](./BetterRest/rieul/README.md) | README | README | README |
 | - | [WordScramble](https://www.hackingwithswift.com/100/swiftui/29) | README | README | README | README | README |
 | - | [Animation](https://www.hackingwithswift.com/100/swiftui/32) | README | README | README | README | README |
 | - | [edutainment](https://www.hackingwithswift.com/guide/ios-swiftui/3/3/challenge) | README | README | README | README | README |
