@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC495E462887D2C700F365E5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC495E452887D2C700F365E5 /* Models.swift */; };
 		ECD732652883C7000042F0A7 /* RockPaperScissorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD732642883C7000042F0A7 /* RockPaperScissorsApp.swift */; };
 		ECD732672883C7000042F0A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD732662883C7000042F0A7 /* ContentView.swift */; };
 		ECD732692883C7020042F0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECD732682883C7020042F0A7 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC495E452887D2C700F365E5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		ECD732612883C7000042F0A7 /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD732642883C7000042F0A7 /* RockPaperScissorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsApp.swift; sourceTree = "<group>"; };
 		ECD732662883C7000042F0A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				ECD732642883C7000042F0A7 /* RockPaperScissorsApp.swift */,
 				ECD732662883C7000042F0A7 /* ContentView.swift */,
+				EC495E452887D2C700F365E5 /* Models.swift */,
 				ECD732682883C7020042F0A7 /* Assets.xcassets */,
 				ECD7326A2883C7020042F0A7 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC495E462887D2C700F365E5 /* Models.swift in Sources */,
 				ECD732672883C7000042F0A7 /* ContentView.swift in Sources */,
 				ECD732652883C7000042F0A7 /* RockPaperScissorsApp.swift in Sources */,
 			);

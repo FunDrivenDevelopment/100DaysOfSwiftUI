@@ -7,51 +7,13 @@
 
 import SwiftUI
 
-enum RockPaperScissorsGame: String, CaseIterable {
-    case Rock = "👊🏼"
-    case Paper = "🖐🏼"
-    case Scissors = "✌🏼"
-
-    func willBeat() -> Self {
-        switch self {
-        case .Rock:
-            return .Scissors
-        case .Paper:
-            return .Rock
-        case .Scissors:
-            return .Paper
-        }
-    }
-
-    func willLose() -> Self {
-        switch self {
-        case .Rock:
-            return .Paper
-        case .Paper:
-            return .Scissors
-        case .Scissors:
-            return .Rock
-        }
-    }
-
-    static func chooseRandomly() -> Self {
-        Self.allCases.randomElement() ?? .Rock
-    }
-}
-
-enum gameGoal: String, CaseIterable {
-    case Win = "Win"
-    case Lose = "Lose"
-
-    static func chooseRandomly() -> Self {
-        Self.allCases.randomElement() ?? .Win
-    }
-}
-
 struct ContentView: View {
     @State private var choice = RockPaperScissorsGame.chooseRandomly()
-    @State private var goal = gameGoal.chooseRandomly()
+    @State private var goal = GameGoal.chooseRandomly()
     @State private var gameStage: Int = 1
+    @State private var showingScore = false
+    @State private var score: Int = 0
+
     let numberOfStages: Int
 
     init(numberOfStages: Int = 10) {
@@ -60,35 +22,79 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Spacer()
+
+            Text("Round \(gameStage)/\(numberOfStages)")
             gameDirection
 
-            HStack {
-                ForEach(RockPaperScissorsGame.allCases, id: \.self) { sign in
-                    buttonForRockPaperScissors(sign)
-                }
-            }
-            .padding()
+            Spacer()
+            Spacer()
+
+            buttons
+
+            Spacer()
+        }
+        .alert("Game Summary", isPresented: $showingScore) {
+            Button("Restart", action: resetGame)
+        } message: {
+            Text("Your score is \(score)")
         }
     }
 
     var gameDirection: some View {
-        Text("Play to \(goal.rawValue)")
-            .font(.largeTitle)
+        Text("Play to \(goal.rawValue) \(choice.rawValue)")
+            .font(.largeTitle.bold())
+    }
+
+    var buttons: some View {
+        VStack {
+            ForEach(RockPaperScissorsGame.allCases, id: \.self) { sign in
+                buttonForRockPaperScissors(sign)
+                    .padding(3)
+            }
+        }
+        .padding()
     }
 
     func buttonForRockPaperScissors(_ sign: RockPaperScissorsGame) -> some View {
         Button {
-            // Some Action
+            buttonTapped(scoreEarned: grade(sign, answer(choice, goal)))
         } label: {
             Text(sign.rawValue)
                 .font(.largeTitle)
+                .frame(maxWidth: .infinity, maxHeight: 100)
+                .background(Material.thin)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .shadow(radius: 2)
         }
-        .frame(maxWidth: .infinity, maxHeight: 100)
-        .background(Material.thin)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(radius: 2)
-        .padding(.horizontal, 3)
+    }
 
+    func grade(_ sign: RockPaperScissorsGame, _ answer: RockPaperScissorsGame) -> Int {
+        return sign == answer ? 1 : 0
+    }
+
+    func answer(_ choice: RockPaperScissorsGame, _ goal: GameGoal) -> RockPaperScissorsGame {
+        switch goal {
+        case .Win:  return choice.willLose()
+        case .Lose: return choice.willBeat()
+        }
+    }
+
+    func buttonTapped(scoreEarned: Int) {
+        choice = RockPaperScissorsGame.chooseRandomly()
+        goal = GameGoal.chooseRandomly()
+        score += scoreEarned
+
+        if gameStage == numberOfStages {
+            showingScore = true
+        } else {
+            gameStage += 1
+        }
+    }
+
+    func resetGame() {
+        gameStage = 1
+        score = 0
     }
 }
 
