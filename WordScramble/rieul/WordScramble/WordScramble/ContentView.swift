@@ -14,6 +14,12 @@ struct ContentView: View {
     @State private var rootWord: String = ""
     /// 텍스트 필드에 바인딩할 수 있는 문자열
     @State private var newWord: String = ""
+    /// 에러 타이틀
+    @State private var errorTitle: String = ""
+    /// 에러 메시지
+    @State private var errorMessage: String = ""
+    /// 에러 표시 여부
+    @State private var showingError: Bool = false
 
     var body: some View {
         NavigationView {
@@ -35,6 +41,11 @@ struct ContentView: View {
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
+            .alert(errorTitle, isPresented: $showingError) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(errorMessage)
+            }
         }
     }
 
@@ -42,6 +53,21 @@ struct ContentView: View {
         let answer: String = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard !answer.isEmpty else {
+            return
+        }
+
+        guard isOriginal(word: answer) else {
+            wordError(title: "Word used already", message: "Be more original")
+            return
+        }
+
+        guard isPossible(word: answer) else {
+            wordError(title: "Word not possible", message: "You can't spell that word from '\(rootWord)'!")
+            return
+        }
+
+        guard isReal(word: answer) else {
+            wordError(title: "Word not recognized", message: "You can't just make them up, you know!")
             return
         }
 
@@ -69,6 +95,47 @@ struct ContentView: View {
 
         // 문제가 생겼다면 여기서 앱이 충돌나고 에러를 표시
         fatalError("Could not load start.txt from bundle.")
+    }
+
+    /// 단어가 이전에 사용되었는지 여부를 판별한다.
+    private func isOriginal(word: String) -> Bool {
+        !usedWords.contains(word)
+    }
+
+    /// 임의의 단어로 rootWord를 만들 수 있는지 여부를 판별한다.
+    private func isPossible(word: String) -> Bool {
+        var tempWord: String = rootWord
+
+        for letter in word {
+            if let pos = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: pos)
+            } else {
+                return false
+            }
+        }
+
+        return true
+    }
+
+    /// 실제로 있는 단어인지 판별한다.
+    private func isReal(word: String) -> Bool {
+        let checker: UITextChecker = UITextChecker()
+        let range: NSRange = NSRange(location: 0, length: word.utf16.count)
+        let misspelledRange: NSRange = checker.rangeOfMisspelledWord(
+            in: word,
+            range: range,
+            startingAt: 0,
+            wrap: false,
+            language: "en"
+        )
+
+        return misspelledRange.location == NSNotFound
+    }
+
+    private func wordError(title: String, message: String) {
+        errorTitle = title
+        errorMessage = message
+        showingError = true
     }
 }
 
