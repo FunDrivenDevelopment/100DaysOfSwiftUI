@@ -30,3 +30,8 @@ UITextChecker 는 Objective-C 로 만들어졌다. 그래서 사용하려면 문
 
 또한 Objective-C 는 Optional 이라는 개념이 없기 때문에, 값이 없는 경우 `NSNotFound` 를 반환한다.
 
+## `fatalError()`
+
+- 해결할 수 없는 문제에 명확하게 대응(= 앱 종료)
+- 때로는 앱을 충돌시켜서 원인을 찾는게 낫다.
+- 
