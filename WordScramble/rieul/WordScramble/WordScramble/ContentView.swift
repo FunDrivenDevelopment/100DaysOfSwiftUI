@@ -39,6 +39,13 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(rootWord)
+            .toolbar {
+                ToolbarItem {
+                    Button("단어 변경") {
+                        startGame()
+                    }
+                }
+            }
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
             .alert(errorTitle, isPresented: $showingError) {
@@ -97,6 +104,9 @@ struct ContentView: View {
 
                 // 4. 무작위 단어 고르기, 없다면 "silkworm" 으로 대체
                 rootWord = allWords.randomElement() ?? "silkworm"
+
+                // 5. 등록된 단어 초기화
+                usedWords = []
 
                 // 모든 작업이 끝났다면 종료
                 return
