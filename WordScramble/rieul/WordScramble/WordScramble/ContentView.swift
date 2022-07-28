@@ -21,6 +21,14 @@ struct ContentView: View {
     /// 에러 표시 여부
     @State private var showingError: Bool = false
 
+    private var score: Int {
+        var result: Int = 0
+        for word in usedWords {
+            result += word.count
+        }
+        return result
+    }
+
     var body: some View {
         NavigationView {
             List {
@@ -36,6 +44,8 @@ struct ContentView: View {
                             Text(word)
                         }
                     }
+                } header: {
+                    Text("점수: \(score)")
                 }
             }
             .navigationTitle(rootWord)
