@@ -25,7 +25,7 @@ Source: [100 Days of SwiftUI – Hacking with Swift](https://www.hackingwithswif
 | 07-13 ~ 07-21 | [ViewsAndModifiers](https://www.hackingwithswift.com/100/swiftui/23) | README | [README](./ViewsAndModifiers/rieul/README.md) | README | README | README |
 | 07-13 ~ 07-19 | [RockPaperScissors](https://www.hackingwithswift.com/guide/ios-swiftui/2/3/challenge) | README | README | README | README | README |
 | 07-13 ~ 07-21 | [BetterRest](https://www.hackingwithswift.com/100/swiftui/26) | README | [README](./BetterRest/rieul/README.md) | README | README | README |
-| - | [WordScramble](https://www.hackingwithswift.com/100/swiftui/29) | README | README | README | README | README |
+| 07-22 ~ 07-28 | [WordScramble](https://www.hackingwithswift.com/100/swiftui/29) | README | [README](./WordScramble/rieul/README.md) | README | README | README |
 | - | [Animation](https://www.hackingwithswift.com/100/swiftui/32) | README | README | README | README | README |
 | - | [edutainment](https://www.hackingwithswift.com/guide/ios-swiftui/3/3/challenge) | README | README | README | README | README |
 | - | [iExpense](https://www.hackingwithswift.com/100/swiftui/36) | README | README | README | README | README |
