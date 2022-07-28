@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var rootWord = ""
     @State private var newWord = ""
+    @State private var usedWords = [String]()
 
     var body: some View {
         NavigationView {
@@ -18,10 +19,31 @@ struct ContentView: View {
                     TextField("Type new word", text: $newWord)
                         .textInputAutocapitalization(.never)
                 }
+
+                Section {
+                    ForEach(usedWords, id: \.self) {
+                        Label($0, systemImage: "\($0.count).circle")
+                    }
+                }
             }
+            .onSubmit(addNewWord)
             .navigationTitle(rootWord)
         }
         .onAppear(perform: startGame)
+    }
+
+    func addNewWord() {
+        let answer = newWord
+            .lowercased()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard answer.count > 0 else { return }
+
+        withAnimation {
+            usedWords.insert(answer, at: 0)
+        }
+
+        newWord = ""
     }
 
     func startGame() {
