@@ -71,6 +71,16 @@ struct ContentView: View {
             return
         }
 
+        guard !isShort(word: answer) else {
+            wordError(title: "너무 짧음", message: "3글자 이하는 허용하지 않습니다.")
+            return
+        }
+
+        guard !isStart(word: answer) else {
+            wordError(title: "시작 단어", message: "시작 단어는 허용하지 않습니다.")
+            return
+        }
+
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
@@ -130,6 +140,14 @@ struct ContentView: View {
         )
 
         return misspelledRange.location == NSNotFound
+    }
+
+    private func isStart(word: String) -> Bool {
+        return rootWord.hasPrefix(word)
+    }
+
+    private func isShort(word: String) -> Bool {
+        return word.count < 3
     }
 
     private func wordError(title: String, message: String) {
