@@ -12,6 +12,10 @@ struct ContentView: View {
     @State private var newWord = ""
     @State private var usedWords = [String]()
 
+    @State private var errorTitle = ""
+    @State private var errorMessage = ""
+    @State private var showingError = false
+
     var body: some View {
         NavigationView {
             List {
@@ -30,6 +34,11 @@ struct ContentView: View {
             .navigationTitle(rootWord)
         }
         .onAppear(perform: startGame)
+        .alert(errorTitle, isPresented: $showingError) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(errorMessage)
+        }
     }
 
     func addNewWord() {
@@ -38,6 +47,21 @@ struct ContentView: View {
             .trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard answer.count > 0 else { return }
+
+        guard isOriginal(word: answer) else {
+            wordError(title: "Word used already", message: "Be original!")
+            return
+        }
+
+        guard isPossible(word: answer) else {
+            wordError(title: "Word not possible", message: "You can't spell that word from \(rootWord)!")
+            return
+        }
+
+        guard isReal(word: answer) else {
+            wordError(title: "Word not recognized", message: "You can't just make it up!")
+            return
+        }
 
         withAnimation {
             usedWords.insert(answer, at: 0)
@@ -61,12 +85,28 @@ struct ContentView: View {
         fatalError("Can not load 'start.txt' file from bundle!")
     }
 
+    func wordError(title: String, message: String) {
+        self.errorTitle = title
+        self.errorMessage = message
+        self.showingError = true
+    }
+
     func isOriginal(word: String) -> Bool {
         return !usedWords.contains(word)
     }
 
     func isPossible(word: String) -> Bool {
-        return wordHistogram(word) == wordHistogram(rootWord)
+        var tempWord = rootWord
+
+        for letter in word {
+            if let pos = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: pos)
+            } else {
+                return false
+            }
+        }
+
+        return true
     }
 
     func isReal(word: String) -> Bool {
@@ -75,12 +115,6 @@ struct ContentView: View {
         let misSpelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
 
         return misSpelledRange.location == NSNotFound
-    }
-
-    func wordHistogram(_ word: String) -> [Character: Int] {
-        return word.reduce(into: [:]) { result, character in
-            result[character, default: 0]  += 1
-        }
     }
 }
 
