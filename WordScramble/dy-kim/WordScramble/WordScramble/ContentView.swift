@@ -60,6 +60,28 @@ struct ContentView: View {
 
         fatalError("Can not load 'start.txt' file from bundle!")
     }
+
+    func isOriginal(word: String) -> Bool {
+        return !usedWords.contains(word)
+    }
+
+    func isPossible(word: String) -> Bool {
+        return wordHistogram(word) == wordHistogram(rootWord)
+    }
+
+    func isReal(word: String) -> Bool {
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count)
+        let misSpelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+
+        return misSpelledRange.location == NSNotFound
+    }
+
+    func wordHistogram(_ word: String) -> [Character: Int] {
+        return word.reduce(into: [:]) { result, character in
+            result[character, default: 0]  += 1
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
