@@ -32,6 +32,19 @@ struct ContentView: View {
             }
             .onSubmit(addNewWord)
             .navigationTitle(rootWord)
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        startGame()
+                        usedWords = []
+                        newWord = ""
+                    } label: {
+                        Image(systemName: "arrow.counterclockwise")
+                            .font(.headline.bold())
+                            .padding()
+                    }
+                }
+            }
         }
         .onAppear(perform: startGame)
         .alert(errorTitle, isPresented: $showingError) {
@@ -60,6 +73,11 @@ struct ContentView: View {
 
         guard isReal(word: answer) else {
             wordError(title: "Word not recognized", message: "You can't just make it up!")
+            return
+        }
+
+        guard isLongEnough(word: answer) else {
+            wordError(title: "Word too short", message: "Word must be at least three letters!")
             return
         }
 
@@ -118,7 +136,7 @@ struct ContentView: View {
     }
 
     func isLongEnough(word: String) -> Bool {
-        return word.count > 3
+        return word.count >= 3
     }
 }
 
