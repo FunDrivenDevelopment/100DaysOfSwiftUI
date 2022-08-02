@@ -44,6 +44,13 @@ struct ContentView: View {
                             .padding()
                     }
                 }
+
+                ToolbarItem(placement: .navigationBarLeading) {
+                    withAnimation {
+                        Text("Score: \(score.formatted())")
+                            .bold()
+                    }
+                }
             }
         }
         .onAppear(perform: startGame)
@@ -137,6 +144,16 @@ struct ContentView: View {
 
     func isLongEnough(word: String) -> Bool {
         return word.count >= 3
+    }
+
+    private var score: Int {
+        let nWords = usedWords.count
+
+        let totalCharacters = usedWords.reduce(0) { (totalSum, word) -> Int in
+            return totalSum + word.count
+        }
+
+        return (nWords + totalCharacters) * 10
     }
 }
 
