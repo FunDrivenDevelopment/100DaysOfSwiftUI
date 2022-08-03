@@ -7,26 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87D327EE2883F6BC009426AA /* RockPaperScissorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D327ED2883F6BC009426AA /* RockPaperScissorsApp.swift */; };
-		87D327F02883F6BC009426AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D327EF2883F6BC009426AA /* ContentView.swift */; };
-		87D327F22883F6BE009426AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D327F12883F6BE009426AA /* Assets.xcassets */; };
-		87D327F52883F6BE009426AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D327F42883F6BE009426AA /* Preview Assets.xcassets */; };
-		87D327FC2883FBF3009426AA /* HandShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D327FB2883FBF3009426AA /* HandShape.swift */; };
-		87D327FE28840B97009426AA /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D327FD28840B97009426AA /* RowView.swift */; };
+		84C49AC828913E55002F386E /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84C49AC728913E55002F386E /* start.txt */; };
+		87076189288ECF9D00DCE81C /* WordScrambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87076188288ECF9D00DCE81C /* WordScrambleApp.swift */; };
+		8707618B288ECF9D00DCE81C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707618A288ECF9D00DCE81C /* ContentView.swift */; };
+		8707618D288ECF9E00DCE81C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8707618C288ECF9E00DCE81C /* Assets.xcassets */; };
+		87076190288ECF9E00DCE81C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8707618F288ECF9E00DCE81C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87D327EA2883F6BC009426AA /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		87D327ED2883F6BC009426AA /* RockPaperScissorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsApp.swift; sourceTree = "<group>"; };
-		87D327EF2883F6BC009426AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		87D327F12883F6BE009426AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		87D327F42883F6BE009426AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		87D327FB2883FBF3009426AA /* HandShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandShape.swift; sourceTree = "<group>"; };
-		87D327FD28840B97009426AA /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		84C49AC728913E55002F386E /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		87076185288ECF9D00DCE81C /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87076188288ECF9D00DCE81C /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
+		8707618A288ECF9D00DCE81C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8707618C288ECF9E00DCE81C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8707618F288ECF9E00DCE81C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		87D327E72883F6BC009426AA /* Frameworks */ = {
+		87076182288ECF9D00DCE81C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,39 +34,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		87D327E12883F6BC009426AA = {
+		8707617C288ECF9D00DCE81C = {
 			isa = PBXGroup;
 			children = (
-				87D327EC2883F6BC009426AA /* RockPaperScissors */,
-				87D327EB2883F6BC009426AA /* Products */,
+				87076187288ECF9D00DCE81C /* WordScramble */,
+				87076186288ECF9D00DCE81C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		87D327EB2883F6BC009426AA /* Products */ = {
+		87076186288ECF9D00DCE81C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87D327EA2883F6BC009426AA /* RockPaperScissors.app */,
+				87076185288ECF9D00DCE81C /* WordScramble.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		87D327EC2883F6BC009426AA /* RockPaperScissors */ = {
+		87076187288ECF9D00DCE81C /* WordScramble */ = {
 			isa = PBXGroup;
 			children = (
-				87D327ED2883F6BC009426AA /* RockPaperScissorsApp.swift */,
-				87D327EF2883F6BC009426AA /* ContentView.swift */,
-				87D327F12883F6BE009426AA /* Assets.xcassets */,
-				87D327F32883F6BE009426AA /* Preview Content */,
-				87D327FB2883FBF3009426AA /* HandShape.swift */,
-				87D327FD28840B97009426AA /* RowView.swift */,
+				84C49AC728913E55002F386E /* start.txt */,
+				87076188288ECF9D00DCE81C /* WordScrambleApp.swift */,
+				8707618A288ECF9D00DCE81C /* ContentView.swift */,
+				8707618C288ECF9E00DCE81C /* Assets.xcassets */,
+				8707618E288ECF9E00DCE81C /* Preview Content */,
 			);
-			path = RockPaperScissors;
+			path = WordScramble;
 			sourceTree = "<group>";
 		};
-		87D327F32883F6BE009426AA /* Preview Content */ = {
+		8707618E288ECF9E00DCE81C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				87D327F42883F6BE009426AA /* Preview Assets.xcassets */,
+				8707618F288ECF9E00DCE81C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -76,39 +73,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		87D327E92883F6BC009426AA /* RockPaperScissors */ = {
+		87076184288ECF9D00DCE81C /* WordScramble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87D327F82883F6BE009426AA /* Build configuration list for PBXNativeTarget "RockPaperScissors" */;
+			buildConfigurationList = 87076193288ECF9F00DCE81C /* Build configuration list for PBXNativeTarget "WordScramble" */;
 			buildPhases = (
-				87D327E62883F6BC009426AA /* Sources */,
-				87D327E72883F6BC009426AA /* Frameworks */,
-				87D327E82883F6BC009426AA /* Resources */,
+				87076181288ECF9D00DCE81C /* Sources */,
+				87076182288ECF9D00DCE81C /* Frameworks */,
+				87076183288ECF9D00DCE81C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RockPaperScissors;
-			productName = RockPaperScissors;
-			productReference = 87D327EA2883F6BC009426AA /* RockPaperScissors.app */;
+			name = WordScramble;
+			productName = WordScramble;
+			productReference = 87076185288ECF9D00DCE81C /* WordScramble.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		87D327E22883F6BC009426AA /* Project object */ = {
+		8707617D288ECF9D00DCE81C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					87D327E92883F6BC009426AA = {
+					87076184288ECF9D00DCE81C = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 87D327E52883F6BC009426AA /* Build configuration list for PBXProject "RockPaperScissors" */;
+			buildConfigurationList = 87076180288ECF9D00DCE81C /* Build configuration list for PBXProject "WordScramble" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,44 +113,43 @@
 				en,
 				Base,
 			);
-			mainGroup = 87D327E12883F6BC009426AA;
-			productRefGroup = 87D327EB2883F6BC009426AA /* Products */;
+			mainGroup = 8707617C288ECF9D00DCE81C;
+			productRefGroup = 87076186288ECF9D00DCE81C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87D327E92883F6BC009426AA /* RockPaperScissors */,
+				87076184288ECF9D00DCE81C /* WordScramble */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		87D327E82883F6BC009426AA /* Resources */ = {
+		87076183288ECF9D00DCE81C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D327F52883F6BE009426AA /* Preview Assets.xcassets in Resources */,
-				87D327F22883F6BE009426AA /* Assets.xcassets in Resources */,
+				87076190288ECF9E00DCE81C /* Preview Assets.xcassets in Resources */,
+				84C49AC828913E55002F386E /* start.txt in Resources */,
+				8707618D288ECF9E00DCE81C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		87D327E62883F6BC009426AA /* Sources */ = {
+		87076181288ECF9D00DCE81C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D327FC2883FBF3009426AA /* HandShape.swift in Sources */,
-				87D327F02883F6BC009426AA /* ContentView.swift in Sources */,
-				87D327EE2883F6BC009426AA /* RockPaperScissorsApp.swift in Sources */,
-				87D327FE28840B97009426AA /* RowView.swift in Sources */,
+				8707618B288ECF9D00DCE81C /* ContentView.swift in Sources */,
+				87076189288ECF9D00DCE81C /* WordScrambleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		87D327F62883F6BE009426AA /* Debug */ = {
+		87076191288ECF9E00DCE81C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -214,7 +210,7 @@
 			};
 			name = Debug;
 		};
-		87D327F72883F6BE009426AA /* Release */ = {
+		87076192288ECF9E00DCE81C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,15 +265,15 @@
 			};
 			name = Release;
 		};
-		87D327F92883F6BE009426AA /* Debug */ = {
+		87076194288ECF9F00DCE81C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RockPaperScissors/Preview Content\"";
-				DEVELOPMENT_TEAM = 8B27K52UU7;
+				DEVELOPMENT_ASSET_PATHS = "\"WordScramble/Preview Content\"";
+				DEVELOPMENT_TEAM = F95C5R6HLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -290,7 +286,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.RockPaperScissors;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.WordScramble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -298,15 +294,15 @@
 			};
 			name = Debug;
 		};
-		87D327FA2883F6BE009426AA /* Release */ = {
+		87076195288ECF9F00DCE81C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RockPaperScissors/Preview Content\"";
-				DEVELOPMENT_TEAM = 8B27K52UU7;
+				DEVELOPMENT_ASSET_PATHS = "\"WordScramble/Preview Content\"";
+				DEVELOPMENT_TEAM = F95C5R6HLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -319,7 +315,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.RockPaperScissors;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.jiwon.WordScramble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -330,25 +326,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		87D327E52883F6BC009426AA /* Build configuration list for PBXProject "RockPaperScissors" */ = {
+		87076180288ECF9D00DCE81C /* Build configuration list for PBXProject "WordScramble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87D327F62883F6BE009426AA /* Debug */,
-				87D327F72883F6BE009426AA /* Release */,
+				87076191288ECF9E00DCE81C /* Debug */,
+				87076192288ECF9E00DCE81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87D327F82883F6BE009426AA /* Build configuration list for PBXNativeTarget "RockPaperScissors" */ = {
+		87076193288ECF9F00DCE81C /* Build configuration list for PBXNativeTarget "WordScramble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87D327F92883F6BE009426AA /* Debug */,
-				87D327FA2883F6BE009426AA /* Release */,
+				87076194288ECF9F00DCE81C /* Debug */,
+				87076195288ECF9F00DCE81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 87D327E22883F6BC009426AA /* Project object */;
+	rootObject = 8707617D288ECF9D00DCE81C /* Project object */;
 }
