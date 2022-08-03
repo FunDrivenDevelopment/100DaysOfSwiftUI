@@ -43,7 +43,12 @@ struct ContentView: View {
                 }
 
                 Section {
-                    Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
+                    Picker("", selection: $coffeeAmount) {
+                        ForEach(1...20, id: \.self) {
+                            Text($0 == 1 ? "1 cup" : "\($0) cups")
+                        }
+                    }
+                    .pickerStyle(.wheel)
                 } header: {
                     Text("Daily coffee intake")
                         .font(.headline)
