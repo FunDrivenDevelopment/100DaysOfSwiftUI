@@ -42,19 +42,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                        }
-                        
-                        Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
-                    }
-                }
-                .onDelete(perform: removeItems)
+                personalList
+
+                businessList
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -63,7 +53,6 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "plus")
                 }
-
             }
             .sheet(isPresented: $showingAddExpense) {
                 AddView(expenses: expenses)
@@ -71,8 +60,72 @@ struct ContentView: View {
         }
     }
 
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    var personalList: some View {
+        Section {
+            ForEach(expenses.items.filter { $0.type == "Personal" }) { item in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                            .font(.headline)
+                        Text(item.type)
+                    }
+
+                    Spacer()
+                    Text(
+                        item.amount,
+                        format: .currency(code: Locale.current.currency?.identifier ?? "USD")
+                    )
+                    .foregroundColor(color(amount: item.amount))
+                }
+            }
+            .onDelete { removeItems(at: $0, in: "Personal") }
+        } header: {
+            Text("Personal")
+        }
+    }
+
+    var businessList: some View {
+        Section {
+            ForEach(expenses.items.filter { $0.type == "Business" }) { item in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                            .font(.headline)
+                        Text(item.type)
+                    }
+
+                    Spacer()
+                    Text(
+                        item.amount,
+                        format: .currency(code: Locale.current.currency?.identifier ?? "USD")
+                    )
+                    .foregroundColor(color(amount: item.amount))
+                }
+            }
+            .onDelete { removeItems(at: $0, in: "Business") }
+        } header: {
+            Text("Business")
+        }
+    }
+
+    // TODO: Section 에 맞는 인덱스
+    func removeItems(at offsets: IndexSet, in type: String) {
+//        let findIndex: Int = expenses.items.filter { $0.type == type }
+//            .index(after: Int(offsets.first ?? 0))
+//        expenses.items.remove(at: findIndex)
+        for offset in offsets {
+            print(offset)
+        }
+    }
+
+    func color(amount: Double) -> Color {
+        if amount < 10.0 {
+            return .black
+        } else if amount < 100.0 {
+            return .blue
+        } else {
+            return .red
+        }
     }
 }
 
