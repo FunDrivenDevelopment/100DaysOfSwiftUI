@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var expenses: Expenses
     @State private var name: String = ""
     @State private var type: String = "Personal"
@@ -36,6 +37,7 @@ struct AddView: View {
                         name: name, type: type, amount: amount
                     )
                     expenses.items.append(item)
+                    dismiss()
                 }
             }
         }
