@@ -23,11 +23,13 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var totalScore: Int = 0
     @State private var gameStage: Int = 1
+    @State private var flagStateList: [FlagState]
 
     init(numberOfOptions: Int = 3, numberOfQuestions: Int = 8) {
         self.numberOfOptions = numberOfOptions
         self.answerIndex = .random(in: 0..<numberOfOptions)
         self.numberOfQuestions = numberOfQuestions
+        self.flagStateList = [FlagState].init(repeating: .initial, count: numberOfOptions)
     }
 
     var body: some View {
@@ -109,12 +111,14 @@ struct ContentView: View {
     var flags: some View {
         ForEach(0..<numberOfOptions, id: \.self) { index in
             Button { flagTapped(index) } label: {
-                FlagImage(conturies[index])
+                FlagImage(conturies[index], state: flagStateList[index])
             }
         }
     }
 
     func flagTapped(_ index: Int) {
+        updateFlagStateList(index)
+
         let conturySelected = conturies[index]
         let isAnswerCorrect = conturySelected == answerCountury
         let isLastStage = gameStage == numberOfQuestions
@@ -129,6 +133,15 @@ struct ContentView: View {
         }
     }
 
+    func updateFlagStateList(_ index: Int) {
+        self.initFlagStateList(state: .notTapped)
+        self.flagStateList[index] = .tapped
+    }
+
+    func initFlagStateList(state: FlagState) {
+        self.flagStateList = [FlagState].init(repeating: state, count: numberOfOptions)
+    }
+
     var feedbackMessage: some View {
         Text("Your score is \(totalScore)")
     }
@@ -137,6 +150,7 @@ struct ContentView: View {
         gameStage += 1
         conturies.shuffle()
         answerIndex = .random(in: 0...(numberOfOptions - 1))
+        self.initFlagStateList(state: .initial)
     }
 
     func renewGame() {
