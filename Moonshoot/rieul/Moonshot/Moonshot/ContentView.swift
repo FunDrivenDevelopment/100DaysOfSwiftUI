@@ -32,17 +32,8 @@ struct Address: Codable {
 
 struct ContentView: View {
     var body: some View {
-        let layout = [
-            GridItem(.adaptive(minimum: 80, maximum: 120))
-        ]
-
-        ScrollView(.horizontal) {
-            LazyHGrid(rows: layout) {
-                ForEach(0..<100) {
-                    Text("Item \($0)")
-                }
-            }
-        }
+        let astronauts = Bundle.main.decode("astronauts.json")
+        Text("\(astronauts.count)")
     }
 }
 
