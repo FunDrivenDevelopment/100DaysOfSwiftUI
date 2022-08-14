@@ -17,6 +17,7 @@
 		8784E5DD28A8C5E500763BA3 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784E5DC28A8C5E500763BA3 /* Bundle+Decodable.swift */; };
 		8784E5DF28A8C79F00763BA3 /* CrewRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784E5DE28A8C79F00763BA3 /* CrewRole.swift */; };
 		8784E5E128A8CADC00763BA3 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784E5E028A8CADC00763BA3 /* Color+Theme.swift */; };
+		8784E5E328A9054400763BA3 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784E5E228A9054400763BA3 /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		8784E5DC28A8C5E500763BA3 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		8784E5DE28A8C79F00763BA3 /* CrewRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRole.swift; sourceTree = "<group>"; };
 		8784E5E028A8CADC00763BA3 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		8784E5E228A9054400763BA3 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				8784E5CC28A8B9CD00763BA3 /* Assets.xcassets */,
 				8784E5CE28A8B9CD00763BA3 /* Preview Content */,
 				8784E5DA28A8C5AA00763BA3 /* Astronaut.swift */,
+				8784E5E228A9054400763BA3 /* MissionView.swift */,
 			);
 			path = Moonshot;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8784E5E328A9054400763BA3 /* MissionView.swift in Sources */,
 				8784E5DB28A8C5AA00763BA3 /* Astronaut.swift in Sources */,
 				8784E5DD28A8C5E500763BA3 /* Bundle+Decodable.swift in Sources */,
 				8784E5CB28A8B9CB00763BA3 /* ContentView.swift in Sources */,
