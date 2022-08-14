@@ -15,6 +15,7 @@
 		8784E5D928A8C55E00763BA3 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8784E5D728A8C55D00763BA3 /* astronauts.json */; };
 		8784E5DB28A8C5AA00763BA3 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784E5DA28A8C5AA00763BA3 /* Astronaut.swift */; };
 		8784E5DD28A8C5E500763BA3 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784E5DC28A8C5E500763BA3 /* Bundle+Decodable.swift */; };
+		8784E5DF28A8C79F00763BA3 /* CrewRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8784E5DE28A8C79F00763BA3 /* CrewRole.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8784E5D728A8C55D00763BA3 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		8784E5DA28A8C5AA00763BA3 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		8784E5DC28A8C5E500763BA3 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
+		8784E5DE28A8C79F00763BA3 /* CrewRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRole.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				8784E5C828A8B9CB00763BA3 /* MoonshotApp.swift */,
 				8784E5DC28A8C5E500763BA3 /* Bundle+Decodable.swift */,
 				8784E5CA28A8B9CB00763BA3 /* ContentView.swift */,
+				8784E5DE28A8C79F00763BA3 /* CrewRole.swift */,
 				8784E5CC28A8B9CD00763BA3 /* Assets.xcassets */,
 				8784E5CE28A8B9CD00763BA3 /* Preview Content */,
 				8784E5DA28A8C5AA00763BA3 /* Astronaut.swift */,
@@ -155,6 +158,7 @@
 				8784E5DD28A8C5E500763BA3 /* Bundle+Decodable.swift in Sources */,
 				8784E5CB28A8B9CB00763BA3 /* ContentView.swift in Sources */,
 				8784E5C928A8B9CB00763BA3 /* MoonshotApp.swift in Sources */,
+				8784E5DF28A8C79F00763BA3 /* CrewRole.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
