@@ -12,6 +12,7 @@ struct ExpenseItem: Codable, Identifiable {
     let name: String
     let type: ExpenseType
     let amount: Double
+    let currencyCode: String
 }
 
 enum ExpenseType: String, CaseIterable, Codable, Identifiable {

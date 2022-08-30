@@ -26,4 +26,24 @@ class Expenses: ObservableObject {
             self.items = items
         }
     }
+
+    var indexOfPersonalItems: [Int] {
+        self.items.enumerated().compactMap { (index, element) -> Int? in
+            element.type == .personal ? index : nil
+        }
+    }
+
+    var indexOfBusinessItems: [Int] {
+        self.items.enumerated().compactMap { (index, element) -> Int? in
+            element.type == .business ? index : nil
+        }
+    }
+
+    var personalItems: [ExpenseItem] {
+        self.items.filter { $0.type == .personal }
+    }
+
+    var businessItems: [ExpenseItem] {
+        self.items.filter { $0.type == .business }
+    }
 }

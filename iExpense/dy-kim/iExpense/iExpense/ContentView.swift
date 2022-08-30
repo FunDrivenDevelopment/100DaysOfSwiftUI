@@ -14,20 +14,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(self.expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type.rawValue.capitalized)
-                        }
-
-                        Spacer()
-
-                        Text(item.amount, format: .currency(code: "USD"))
+                Section("Personal") {
+                    ForEach(self.expenses.personalItems) {
+                        ItemRowView(item: $0)
                     }
+                    .onDelete { self.removeItems(at: $0, on: .personal) }
                 }
-                .onDelete(perform: self.removeItems)
+
+                Section("Business") {
+                    ForEach(self.expenses.businessItems) {
+                        ItemRowView(item: $0)
+                    }
+                    .onDelete { self.removeItems(at: $0, on: .business) }
+                }
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -43,8 +42,17 @@ struct ContentView: View {
         }
     }
 
-    func removeItems(at offsets: IndexSet) {
-        self.expenses.items.remove(atOffsets: offsets)
+    func removeItems(at offsets: IndexSet, on type: ExpenseType) {
+        switch type {
+        case .business:
+            offsets.forEach {
+                self.expenses.items.remove(at: self.expenses.indexOfBusinessItems[$0])
+            }
+        case .personal:
+            offsets.forEach {
+                self.expenses.items.remove(at: self.expenses.indexOfPersonalItems[$0])
+            }
+        }
     }
 }
 
