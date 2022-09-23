@@ -37,9 +37,6 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-    static let missions: [Mission] = Bundle.main.decode("missions.json")
-    
     static var previews: some View {
         ContentView(
             astronauts: astronauts,
