@@ -31,6 +31,18 @@ extension Mission {
     var formattedLaunchDate: String {
         self.launchDate?.formatted(date: .abbreviated, time: .omitted) ?? "N/A"
     }
+
+    static func missionCrews(crew: Mission.Crew, astronauts: [String: Astronaut]) -> MissionCrew {
+        if let astronaut = astronauts[crew.name] {
+            return MissionCrew(
+                id: crew.name,
+                name: astronaut.name,
+                role: crew.role
+            )
+        } else {
+            fatalError("No astronaut wit id: \(crew.name)")
+        }
+    }
 }
 
 let missions: [Mission] = Bundle.main.decode("missions.json")
