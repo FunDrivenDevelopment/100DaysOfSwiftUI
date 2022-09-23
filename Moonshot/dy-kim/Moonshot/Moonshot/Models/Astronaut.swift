@@ -12,3 +12,5 @@ struct Astronaut: Codable, Identifiable {
     let name: String
     let description: String
 }
+
+let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")

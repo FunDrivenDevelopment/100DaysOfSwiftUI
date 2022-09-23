@@ -32,3 +32,5 @@ extension Mission {
         self.launchDate?.formatted(date: .abbreviated, time: .omitted) ?? "N/A"
     }
 }
+
+let missions: [Mission] = Bundle.main.decode("missions.json")
