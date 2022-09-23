@@ -16,5 +16,3 @@ struct MissionCrew: Identifiable {
 let missionCrews = missions[0].crew.map {
     Mission.missionCrews(crew: $0, astronauts: astronauts)
 }
-
-
