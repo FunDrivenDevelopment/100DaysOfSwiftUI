@@ -11,6 +11,7 @@ struct MissionCrew: Identifiable {
     let id: String
     let name: String
     let role: String
+    let description: String
 }
 
 let missionCrews = missions[0].crew.map {

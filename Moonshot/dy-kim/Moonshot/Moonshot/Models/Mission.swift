@@ -37,7 +37,8 @@ extension Mission {
             return MissionCrew(
                 id: crew.name,
                 name: astronaut.name,
-                role: crew.role
+                role: crew.role,
+                description: astronaut.description
             )
         } else {
             fatalError("No astronaut wit id: \(crew.name)")
