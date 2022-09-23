@@ -34,6 +34,8 @@ struct MissionCellView: View {
 }
 
 struct MissionCellView_Previews: PreviewProvider {
+    static let missions: [Mission] = Bundle.main.decode("missions.json")
+    
     static var previews: some View {
         MissionCellView(mission: missions[0])
             .frame(width: 150, height: 250)

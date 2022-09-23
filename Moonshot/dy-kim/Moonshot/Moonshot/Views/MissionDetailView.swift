@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MissionDetailView: View {
     let mission: Mission
+    let astronauts: [String: Astronaut]
 
     var body: some View {
         GeometryReader { proxy in
@@ -27,6 +28,8 @@ struct MissionDetailView: View {
                         Text(self.mission.description)
                     }
                     .padding()
+
+                    MissionCrewListView(crews: self.missionCrews)
                 }
             }
             .padding(.bottom)
@@ -35,12 +38,19 @@ struct MissionDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .preferredColorScheme(.dark)
     }
+
+    var missionCrews: [MissionCrew] {
+        self.mission.crew.map {
+            Mission.missionCrews(crew: $0, astronauts: self.astronauts)
+        }
+    }
 }
 
 struct MissionView_Previews: PreviewProvider {
-    static let missions: [Mission] = Bundle.main.decode("missions.json")
-
     static var previews: some View {
-        MissionDetailView(mission: missions[0])
+        MissionDetailView(
+            mission: missions[0],
+            astronauts: astronauts
+        )
     }
 }

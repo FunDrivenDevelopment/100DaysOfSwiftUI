@@ -20,7 +20,10 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: self.columns) {
                     ForEach(missions) { mission in
-                        NavigationLink(destination: MissionDetailView(mission: mission)) {
+                        NavigationLink(destination: MissionDetailView(
+                            mission: mission,
+                            astronauts: self.astronauts
+                        )) {
                             MissionCellView(mission: mission)
                         }
                     }
@@ -34,6 +37,9 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    static let missions: [Mission] = Bundle.main.decode("missions.json")
+    
     static var previews: some View {
         ContentView(
             astronauts: astronauts,
