@@ -13,7 +13,7 @@ struct MissionDetailView: View {
 
     var body: some View {
         GeometryReader { proxy in
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     Image(mission.image)
                         .resizable()
@@ -21,11 +21,18 @@ struct MissionDetailView: View {
                         .frame(maxWidth: proxy.size.width * 0.5)
 
                     VStack(alignment: .leading) {
+                        self.customDivider
+
                         Text(self.mission.displayName)
                             .font(.title.bold())
                             .padding(.bottom)
 
                         Text(self.mission.description)
+
+                        self.customDivider
+
+                        Text("Mission Crews")
+                            .font(.title.bold())
                     }
                     .padding()
 
@@ -43,6 +50,13 @@ struct MissionDetailView: View {
         self.mission.crew.map {
             Mission.missionCrews(crew: $0, astronauts: self.astronauts)
         }
+    }
+
+    var customDivider: some View {
+        Rectangle()
+            .frame(height: 2)
+            .foregroundStyle(.ultraThickMaterial)
+            .padding(.bottom)
     }
 }
 
