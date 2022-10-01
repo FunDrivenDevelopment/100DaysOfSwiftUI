@@ -8,18 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel: HabitListViewModel = .init()
+    @State private var isPresentingSheet = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(viewModel.habits) { habit in
+                    NavigationLink {
+                        HabitDetailView(
+                            habit: habit,
+                            habitListViewModel: viewModel
+                        )
+                    } label: {
+                        Text(habit.title)
+                    }
+                }
+            }
+            .navigationTitle("Habit Tracker")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        isPresentingSheet = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $isPresentingSheet) {
+                NewHabitView(viewModel: viewModel)
+            }
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+
     static var previews: some View {
         ContentView()
     }
